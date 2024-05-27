@@ -1,5 +1,7 @@
+'use strict';
+
 const converter  = require('../js/converter'); 
-const dictionary = require("../js/dictionary");
+const dictionary = require('../js/dictionary');
 
 describe('converter', () => {
   test('should translate HAI to JavaScript', async () => {
@@ -26,21 +28,21 @@ describe('converter', () => {
   test('should translate BTW to JavaScript', async () => {
     const lolcode = 'BTW This is a comment';
     const expectedJs = dictionary['BTW'](lolcode);
-    const result = await converter(lolcode); // Змінено тут
+    const result = await converter(lolcode); 
     expect(result).toEqual(expectedJs);
   });
 
   test('should translate OBTW to JavaScript', async () => {
     const lolcode = 'OBTW This is a multi-line comment';
     const expectedJs = dictionary['OBTW'];
-    const result = await converter(lolcode); // Змінено тут
+    const result = await converter(lolcode); 
     expect(result).toEqual(expectedJs);
   });
 
   test('should translate TLDR to JavaScript', async () => {
     const lolcode = 'TLDR';
     const expectedJs = dictionary['TLDR'];
-    const result = await converter(lolcode); // Змінено тут
+    const result = await converter(lolcode); 
     expect(result).toEqual(expectedJs);
   });
 
